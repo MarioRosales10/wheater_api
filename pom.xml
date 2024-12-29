@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>3.4.1</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.example</groupId>
+	<artifactId>wheater_api</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>wheater_api</name>
+	<description> # Weather API  This is a solution for the Weather API project on  https://roadmap.sh/projects/weather-api-wrapper-service  ### Requirements: - Java 21 - Redis Server https://redis.io/docs/latest/operate/oss_and_stack/install/install-redis/install-redis-on-windows/  ### How to use: This is a Spring Boot Application with a maven wrapper so you can easily run it with **./mvnw spring-boot:run**   #### Endpoints (Assuming localhost:8080): - **localhost:8080/{countryName}** this will retrieve todays weather status in simple terms in JSON  - **localhost:8080/{countryName}/all** this wil retrieve the 15 upcomming days including todays weather status in simple terms</description>
+	<url/>
+	<licenses>
+		<license/>
+	</licenses>
+	<developers>
+		<developer/>
+	</developers>
+	<scm>
+		<connection/>
+		<developerConnection/>
+		<tag/>
+		<url/>
+	</scm>
+	<properties>
+		<java.version>17</java.version>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
