@@ -5,14 +5,14 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.4.1</version>
+		<version>3.3.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.example</groupId>
-	<artifactId>wheater_api</artifactId>
+	<groupId>jo.rashed</groupId>
+	<artifactId>weather-api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>wheater_api</name>
-	<description> # Weather API  This is a solution for the Weather API project on  https://roadmap.sh/projects/weather-api-wrapper-service  ### Requirements: - Java 21 - Redis Server https://redis.io/docs/latest/operate/oss_and_stack/install/install-redis/install-redis-on-windows/  ### How to use: This is a Spring Boot Application with a maven wrapper so you can easily run it with **./mvnw spring-boot:run**   #### Endpoints (Assuming localhost:8080): - **localhost:8080/{countryName}** this will retrieve todays weather status in simple terms in JSON  - **localhost:8080/{countryName}/all** this wil retrieve the 15 upcomming days including todays weather status in simple terms</description>
+	<name>weather-api</name>
+	<description>Weather API with Redis</description>
 	<url/>
 	<licenses>
 		<license/>
@@ -27,18 +27,43 @@
 		<url/>
 	</scm>
 	<properties>
-		<java.version>17</java.version>
+		<java.version>21</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter</artifactId>
+			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+
+
+		<dependency>
+			<groupId>redis.clients</groupId>
+			<artifactId>jedis</artifactId>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.springframework.data/spring-data-redis -->
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-redis</artifactId>
+			<version>3.3.3</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.17.2</version>
 		</dependency>
 	</dependencies>
 
@@ -47,6 +72,14 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<excludes>
+						<exclude>
+							<groupId>org.projectlombok</groupId>
+							<artifactId>lombok</artifactId>
+						</exclude>
+					</excludes>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

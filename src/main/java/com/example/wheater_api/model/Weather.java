@@ -1,7 +1,8 @@
-package com.example.wheater_api;
+package com.example.wheater_api.model;
 
-import lombook.*;
-import java.io.Serializable;;
+import lombok.*;
+import java.io.Serializable;
+import java.rmi.server.ServerRef;;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -9,10 +10,9 @@ import java.io.Serializable;;
 @Getter
 @Data
 
-public class Weather {
+public class Weather implements Serializable{
     private String dateTime;
     private String description;
     private String address;
     private double temperature;
-    
 }
